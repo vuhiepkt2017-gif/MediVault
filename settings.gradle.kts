@@ -27,10 +27,10 @@ dependencyResolutionManagement {
             library("androidx-lifecycle-runtime-ktx", "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
             library("androidx-activity-compose", "androidx.activity:activity-compose:1.8.2")
             library("androidx-compose-bom", "androidx.compose:compose-bom:2023.10.01")
-            library("androidx-compose-ui", "androidx.compose.ui:ui")
-            library("androidx-compose-ui-graphics", "androidx.compose.ui:ui-graphics")
-            library("androidx-compose-ui-tooling-preview", "androidx.compose.ui:ui-tooling-preview")
-            library("androidx-compose-material3", "androidx.compose.material3:material3")
+            library("androidx-compose-ui", "androidx.compose.ui:ui:1.5.4")
+            library("androidx-compose-ui-graphics", "androidx.compose.ui:ui-graphics:1.5.4")
+            library("androidx-compose-ui-tooling-preview", "androidx.compose.ui:ui-tooling-preview:1.5.4")
+            library("androidx-compose-material3", "androidx.compose.material3:material3:1.1.2")
             library("androidx-navigation-compose", "androidx.navigation:navigation-compose:2.7.7")
             
             // Room
@@ -40,7 +40,7 @@ dependencyResolutionManagement {
             
             // CameraX
             library("androidx-camera-core", "androidx.camera:camera-core:1.3.1")
-            library("androidx-camera-camera2", "androidx.camera:camera-2:1.3.1")
+            library("androidx-camera-camera2", "androidx.camera:camera-camera2:1.3.1")
             library("androidx-camera-lifecycle", "androidx.camera:camera-lifecycle:1.3.1")
             library("androidx-camera-view", "androidx.camera:camera-view:1.3.1")
             
