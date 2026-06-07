@@ -75,7 +75,7 @@ dependencies {
     implementation(libs.androidx.camera.view)
 
     // ML Kit Text Recognition
-    implementation(libs.play.services.mlkit.text-recognition)
+    implementation(libs.play.services.mlkit.text.recognition)
 
     // Coil Image loader
     implementation(libs.coil.compose)
