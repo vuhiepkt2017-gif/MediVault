@@ -49,6 +49,7 @@ dependencyResolutionManagement {
 
             // Coil for Image Loading
             library("coil-compose", "io.coil-kt:coil-compose:2.5.0")
+            library("androidx-material-icons-extended", "androidx.compose.material:material-icons-extended:1.5.4")
 
             plugin("android-application", "com.android.application").version("8.2.2")
             plugin("kotlin-android", "org.jetbrains.kotlin.android").version("1.9.22")

@@ -25,8 +25,12 @@ data class MedicineDetails(
 
 class HealthViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository: HealthRepository
-    val allMembers: StateFlow<List<Member>>
+    private val repository: HealthRepository = HealthRepository(AppDatabase.getDatabase(application).memberDao())
+    val allMembers: StateFlow<List<Member>> = repository.allMembers.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        emptyList()
+    )
 
     private val _selectedMemberId = MutableStateFlow<Long?>(null)
     val selectedMemberId: StateFlow<Long?> = _selectedMemberId
@@ -68,16 +72,6 @@ class HealthViewModel(application: Application) : AndroidViewModel(application) 
         MedicineDetails("Amlodipine", "Amlodipine 5mg", "Điều trị tăng huyết áp, đau thắt ngực ổn định.", "Phù cổ chân, nhức đầu, đỏ bừng mặt, chóng mặt.", "Uống 1 viên duy nhất vào một giờ cố định trong ngày (thường buổi sáng)."),
         MedicineDetails("Metformin", "Metformin Hydrochloride 850mg", "Kiểm soát đường huyết ở bệnh nhân tiểu đường tuýp 2.", "Rối loạn tiêu hóa (đầy hơi, tiêu chảy, chán ăn).", "Uống 1 viên ngay trong hoặc sau bữa ăn tối.")
     )
-
-    init {
-        val database = AppDatabase.getDatabase(application)
-        repository = HealthRepository(database.memberDao())
-        allMembers = repository.allMembers.stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            emptyList()
-        )
-    }
 
     fun selectMember(memberId: Long) {
         _selectedMemberId.value = memberId
